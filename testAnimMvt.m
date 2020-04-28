@@ -1,11 +1,12 @@
 i=1;
 rayon = 2;
 positionCentre = [10, 5];
-positionCote = [0,0.5];
+positionCote = [2,0.5];
 [vx, vy] = velocityComponents(-2, 20);
 temps = function2D(rayon,positionCentre, positionCote, sqrt(vx^2 + vy^2));
 [xc1, yc1] = createBoard(1, -10, 1, 10);
 [xTest, yTest] = intercepts(vx, vy, positionCentre);
+collide(xc1,yc1,xTest, yTest)
 for t=0:0.1:temps
     xc = positionCentre(1,1) + vx*t;
     theta = linspace(0, 2*pi);
