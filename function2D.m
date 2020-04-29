@@ -1,5 +1,3 @@
-function [temps] = function2D(rayon, positionCentre, positionCote, vitesse)
-deplacement = positionCote - positionCentre
-distance = norm(deplacement)
-temps = (distance - rayon) / abs(vitesse);
+function [temps] = function2D(c , distance)
+temps = (distance - getRadius(c)) / abs(getSpeed(getVelocityVector(c)));
 end
