@@ -28,7 +28,6 @@ classdef cercle
         function [m , p] = getSlopeAndP(obj)
             [m , p] = getSlopeAndP(obj.vVector);
         end
-        
         function [x, y] = getCoord(obj)
             x = obj.xCentre;
             y = obj.yCentre;

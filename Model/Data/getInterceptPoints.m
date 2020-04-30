@@ -1,6 +1,6 @@
-function [xI, yI] = getInterceptPoints(s, c)
-[mc , pc] = getSlopeAndP(c);
-[ms , ps] = getSlopeAndP(s);
+function [xI, yI] = getInterceptPoints(side, circle)
+[mc , pc] = getSlopeAndP(circle);
+[ms , ps] = getSlopeAndP(side);
 if(isnan(ms)) 
    xI = getX(s);
 else

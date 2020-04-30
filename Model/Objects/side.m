@@ -35,17 +35,20 @@ classdef side
         %%GETTER
         function [matrix] = getCoord(obj)
             matrix = [obj.xA obj.yA ; obj.xB obj.yB]
-        end
-        
+        end        
         function [m, p] = getSlopeAndP(obj)
             m = obj.m;
             p = obj.p;
+        end        
+        function m = getSlope(obj)
+            m = obj.m;
         end
-        
         function x = getX(obj)
             x = obj.xA;
-        end
-        
+        end  
+        function y = getY(obj)
+            y = obj.yA;
+        end  
         function [xMatrix, yMatrix] = getPointsMatrix(obj)
            xMatrix = obj.xMatrix;
            yMatrix = obj.yMatrix;
