@@ -19,7 +19,7 @@ classdef velocityVector
             obj.theta = theta;
             [obj.vx , obj.vy] = velocityComponents(speed, theta);
         end
-        
+        %SETTER
         function obj = setSlopeAndP(obj, x, y)
             [obj.mv, obj.pv] = getMandPFromVelocity(x,y, obj.vx, obj.vy);
         end
@@ -31,12 +31,15 @@ classdef velocityVector
             p = obj.pv;
         end
         function speed = getSpeed(obj)
-            speed = obj.speed;
+            speed = abs(obj.speed);
         end
         function [vx, vy] = getVelocityComponents(obj)
             vx = obj.vx;
             vy = obj.vy;
         end
+        function [vx] = getVX(obj)
+            vx = obj.vx;
+        end 
     end
 end
 
