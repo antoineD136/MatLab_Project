@@ -1,11 +1,13 @@
-function [m,p] = getMandPFromVelocity(x1, y1, vx, vy)
-x2 = x1 + vx*1;
-y2 = y1 + vy*1;
-if((x2 - x1) ~= 0 )
-    m = (y2 -y1) / (x2 - x1);
+function [m,p] = getMandPFromVelocity(coord, speedInAxis)
+%disp('MandP');
+%disp(num2str(speedInAxis));
+x2 = coord(1,1) + speedInAxis(1,1)*1;
+y2 = coord(1,2) + speedInAxis(1,2)*1;
+if((x2 - coord(1,1)) ~= 0 )
+    m = (y2 -coord(1,2)) / (x2 - coord(1,1));
 else
     m =0;
 end
-p = y1 - m*x1;
+p = coord(1,2) - m*coord(1,1);
 end
 

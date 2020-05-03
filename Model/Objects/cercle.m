@@ -1,12 +1,11 @@
 classdef cercle
     %CIRCLE Summary of this class goes here
     %   Detailed explanation goes here
-    
     properties
-        radius
-        xCentre
-        yCentre
-        vVector
+      radius;
+      xCentre;
+      yCentre;
+      vVector;
     end
     
     methods
@@ -16,29 +15,43 @@ classdef cercle
             obj.radius = radius;
             obj.xCentre = xCentre;
             obj.yCentre = yCentre;
-            obj.vVector = velocityVector(speed, theta);
-            obj.vVector = setSlopeAndP(obj.vVector, obj.xCentre, obj.yCentre);
+            obj.vVector = velocityVector(speed, theta, [obj.xCentre, obj.yCentre]);
         end
         
         %%SETTER
-        
-        
+        function obj = set.radius(obj, radius)
+            obj.radius = radius;
+        end
+        function obj = set.xCentre(obj, xCentre)
+            obj.xCentre = xCentre;
+        end
+        function obj = set.yCentre(obj, yCentre)
+            obj.yCentre = yCentre;
+        end
+        function obj = set.vVector(obj, vVector)
+            obj.vVector = vVector;
+        end
         %%GETTER
         
-        function [m , p] = getSlopeAndP(obj)
-            [m , p] = getSlopeAndP(obj.vVector);
+        function [m, p] = getSlopeAndP(obj)
+            m = obj.vVector.slope;
+            p = obj.vVector.p;
         end
         function [x, y] = getCoord(obj)
             x = obj.xCentre;
             y = obj.yCentre;
         end
-        
-        function radius = getRadius(obj)
+        function radius = get.radius(obj)
             radius = obj.radius;
         end
-        
-        function velocityVect = getVelocityVector(obj)
-            velocityVect = obj.vVector;
+        function vVector = get.vVector(obj)
+            vVector = obj.vVector;
+        end
+        function xCentre = get.xCentre(obj)
+            xCentre = obj.xCentre;
+        end
+        function yCentre = get.yCentre(obj)
+            yCentre = obj.yCentre;
         end
     end
 end

@@ -32,6 +32,31 @@ classdef side
                 obj.yMatrix = linspace(obj.yA, obj.yB, 1000);
             end
         end
+        %%SETTER
+        function obj = set.xA(obj, xA)
+            obj.xA = xA;
+        end
+        function obj = set.yA(obj, yA)
+            obj.yA = yA;
+        end
+         function obj = set.xB(obj, xB)
+            obj.xB = xB;
+        end
+        function obj = set.yB(obj, yB)
+            obj.yB = yB;
+        end
+        function obj = set.m(obj, m)
+            obj.m = m;
+        end
+        function obj = set.p(obj, p)
+            obj.p = p;
+        end
+        function obj = set.xMatrix(obj, xMatrix)
+            obj.xMatrix = xMatrix;
+        end
+        function obj = set.yMatrix(obj, yMatrix)
+            obj.yMatrix = yMatrix;
+        end
         %%GETTER
         function [matrix] = getCoord(obj)
             matrix = [obj.xA obj.yA ; obj.xB obj.yB]
