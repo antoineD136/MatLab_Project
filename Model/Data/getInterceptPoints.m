@@ -1,6 +1,4 @@
 function [xI, yI] = getInterceptPoints(side, circle)
-disp('mc et pc valent');
-disp(num2str(getSlopeAndP(circle)));
 [mc , pc] = getSlopeAndP(circle);
 [ms , ps] = getSlopeAndP(side);
 if(isnan(ms)) 

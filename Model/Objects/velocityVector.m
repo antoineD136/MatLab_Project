@@ -43,7 +43,7 @@ classdef velocityVector
             obj.speed = speed;
         end
         function obj = set.thetaAboutSideFromCollide(obj, thetaAboutSideFromCollide)
-            obj.thetaAboutSideFromCollide = thetaAboutSideFromCollide;
+            obj.thetaAboutSideFromCollide = toDegrees('radians',thetaAboutSideFromCollide);
         end
         %%GETTER
         function projectedSpeedVx = get.projectedSpeedVx(obj)
@@ -68,7 +68,7 @@ classdef velocityVector
             thetaAboutSideFromCollide = obj.thetaAboutSideFromCollide;
         end
         function [theta, thetaAboutSideFromCollide] = getThetaAndRelativeTheta(obj)
-           theta = toRadians('degrees', obj.theta);
+           theta = obj.theta;
            thetaAboutSideFromCollide = obj.thetaAboutSideFromCollide;
         end
         function [vx, vy] = getVelocityComponents(obj)

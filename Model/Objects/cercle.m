@@ -20,7 +20,11 @@ classdef cercle
         
         %%SETTER
         function obj = set.radius(obj, radius)
+            if radius == 0
+                disp('Le rayon ne peut pas valoir zero!');
+            else
             obj.radius = radius;
+            end
         end
         function obj = set.xCentre(obj, xCentre)
             obj.xCentre = xCentre;

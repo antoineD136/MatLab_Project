@@ -1,9 +1,9 @@
 
 cercl = cercle(8, 5, 2, -20, 20);
-s1 = side(1,-10, 3, 10);
-s2 = side(12, -10, 12, 10);
+s1 = side(1,-20, 3, 10);
+s2 = side(12, -20, 13, 10);
 [xcInitial , ycInitial] = getCoord(cercl);
-[time, cercl] = getFirstCollide(cercl, s1)
+[time, cercl] = getFirstCollide(cercl, s1);
 [vxc, vyc] = getVelocityComponents(cercl.vVector);
 i=1;
 [xMatrixs1, yMatrixs1] = getPointsMatrix(s1);
