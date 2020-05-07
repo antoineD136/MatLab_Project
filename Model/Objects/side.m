@@ -22,7 +22,7 @@ classdef side
             obj.xB = xB;
             obj.yB = yB;
             obj.xMatrix = linspace(obj.xA, obj.xB, 1000);
-            if((xB - xA) ~= 0)
+            if((xB - xA) > 0 + 0.0001 || (xB - xA) < 0 - 0.0001)
                 obj.m = (yB - yA)/(xB - xA);               
                 obj.p = yA - obj.m*xA;
                 obj.yMatrix = obj.m*obj.xMatrix + obj.p;

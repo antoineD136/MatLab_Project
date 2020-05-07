@@ -12,6 +12,10 @@ classdef cercle
         function obj = cercle(xCentre, yCentre, radius, speed, theta)
             %CIRCLE Construct an instance of this class
             %   Detailed explanation goes here
+             if theta > 90
+                disp('L''angle doit être comprit entre 0° et 90°');
+                theta = 90;
+             end
             obj.radius = radius;
             obj.xCentre = xCentre;
             obj.yCentre = yCentre;

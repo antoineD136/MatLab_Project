@@ -1,13 +1,22 @@
-function [time, circle] = getFirstCollide(circle1, side1)
+function [time, side, circleToReturn] = getFirstCollide(circle, box)
 disp('Début getFirstCollide');
-[xCircle1, yCircle1] = getCoord(circle1);
-distanceToRunC1S1 = getDistanceBetweenSideAndCircle(xCircle1, yCircle1, side1);
-distanceC1S1 = getDistanceFromAVector(side1, circle1);
-alpha = (pi/2) - getAnglefromSinus(distanceToRunC1S1, distanceC1S1);
-circle1.vVector.thetaAboutSideFromCollide = alpha;
-speed = applySpeedToNewAxis(circle1.vVector.speed, alpha)
-time = getTimeFromDistance(distanceToRunC1S1 - circle1.radius, speed);
-circle = circle1;
+[xCircle1, yCircle1] = getCoord(circle);
+distanceToRunMatrix = getDistanceBetweenSideAndCircle(xCircle1, yCircle1, box)
+distanceSideCircleMatrix = getDistanceFromAVector(box, circle)
+angleMatrix = (pi/2) - getAnglefromSinus(distanceToRunMatrix, distanceSideCircleMatrix);
+speedMatrix = applySpeedToNewAxis(circle.vVector.speed, angleMatrix);
+timeMatrix = getTimeFromDistance(distanceToRunMatrix - circle.radius, speedMatrix);
+[rows, colunms] = size(box.sideMatrix);
+for i = 1:1:colunms
+     if distanceSideCircleMatrix(1,i) < 0
+           timeMatrix(1, i) = -timeMatrix(1, i);
+     end
+end
+[time, side] = getTimeAndSideForCollide(timeMatrix, box);
+[row,col] = find(timeMatrix== time)
+angleMatrix
+circle.vVector.thetaAboutSideFromCollide = angleMatrix(row, col);
 disp('Fin getFirstCollide');
+circleToReturn = circle;
 end
 

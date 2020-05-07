@@ -25,7 +25,7 @@ classdef velocityVector
             [obj.slope, obj.p] = getMandPFromVelocity(coord, [obj.projectedSpeedVx, obj.projectedSpeedVy]);
         end
         function obj = set.slope(obj, slope)
-            obj.slope = slope;
+            obj.slope = slope
         end
         function obj = set.p(obj, p)
             obj.p = p;
@@ -37,13 +37,13 @@ classdef velocityVector
             obj.projectedSpeedVy = projectedSpeedVy;
         end
         function obj = set.theta(obj, theta)
-            obj.theta = theta;
+                obj.theta = theta;
         end
         function obj = set.speed(obj, speed)
             obj.speed = speed;
         end
         function obj = set.thetaAboutSideFromCollide(obj, thetaAboutSideFromCollide)
-            obj.thetaAboutSideFromCollide = toDegrees('radians',thetaAboutSideFromCollide);
+            obj.thetaAboutSideFromCollide = toDegrees('radians',thetaAboutSideFromCollide)
         end
         %%GETTER
         function projectedSpeedVx = get.projectedSpeedVx(obj)

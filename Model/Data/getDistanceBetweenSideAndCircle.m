@@ -1,27 +1,30 @@
-function [length] = getDistanceBetweenSideAndCircle(xcircle, ycircle,side)
-[mside, pside] = getSlopeAndP(side);
-if(isnan(mside))
-    mdp = 0;
-elseif(mside == 0)
-    mdp = NaN;
-else
-    mdp = -1/mside;
-end
-if(~isnan(mdp))
-    pdp = ycircle - xcircle*mdp;
-end
-
-if(isnan(mside))
-    xI = getX(side); 
-    yI = mdp*xI + pdp;
-else
-    if(~isnan(mdp))
-        xI = (pside - pdp)/(mdp - mside);
-        yI = mdp*xI + pdp;
+function [lengthMatrix] = getDistanceBetweenSideAndCircle(xcircle, ycircle,box)
+[mSideMatrix, pSideMatrix] = getSlopeAndPMatrix(box);
+   [rows, colunms] = size(box.sideMatrix);
+for i=1:1:colunms
+    if(isnan(mSideMatrix(1,i)))
+        mdpMatrix(1,i) = 0;
+    elseif(mSideMatrix(1,i) == 0)
+        mdpMatrix(1,i) = NaN;
     else
-        xI = xcircle;
-        yI = getY(side);
+        mdpMatrix(1,i) = -1/mSideMatrix(1,i);
     end
+    if(~isnan(mdpMatrix(1,i)))
+        pdpMatrix(1,i) = ycircle - xcircle*mdpMatrix(1,i);
+    end
+
+    if(isnan(mSideMatrix(1,i)))
+        xI = getX(box.sideMatrix(1,i)); 
+        yI = mdpMatrix(1,i)*xI + pdpMatrix(1,i);
+    else
+        if(~isnan(mdpMatrix(1,i)))
+            xI = (pSideMatrix(1,i) - pdpMatrix(1,i))./(mdpMatrix(1,i) - mSideMatrix(1,i));
+            yI = mdpMatrix(1,i)*xI + pdpMatrix(1,i);
+        else
+            xI = xcircle;
+            yI = getY(box.sideMatrix(1,i));
+        end
+    end
+     lengthMatrix(1,i) = sqrt((xcircle-xI)^2 + (ycircle - yI)^2);
 end
-    length = sqrt((xcircle-xI)^2 + (ycircle - yI)^2);
 end
