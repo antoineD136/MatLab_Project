@@ -8,9 +8,10 @@ for t=0:0.01:time
     y = cercl.radius*sin(theta) + ycf;
     plot(x,y, xMatrixs1, yMatrixs1, xMatrixs2, yMatrixs2, xMatrixs3, yMatrixs3, xMatrixs4, yMatrixs4 ); 
     axis equal;
-    xlim([-10,30]);
-    ylim([-10,50]);
+    xlim([-30,30]);
+    ylim([-50,50]);
     anim(i)=getframe;
     i=i+1;
 end
 disp('Fin script simulation');
+

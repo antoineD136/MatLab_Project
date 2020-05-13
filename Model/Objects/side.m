@@ -28,7 +28,7 @@ classdef side
                 obj.yMatrix = obj.m*obj.xMatrix + obj.p;
             else 
                 obj.m = NaN;
-                obj.p = NaN;
+                obj.p = 0;
                 obj.yMatrix = linspace(obj.yA, obj.yB, 1000);
             end
         end

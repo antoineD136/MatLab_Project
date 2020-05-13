@@ -12,16 +12,25 @@ classdef cercle
         function obj = cercle(xCentre, yCentre, radius, speed, theta)
             %CIRCLE Construct an instance of this class
             %   Detailed explanation goes here
-             if theta > 90
-                disp('L''angle doit être comprit entre 0° et 90°');
-                theta = 90;
+            if theta == 360
+                theta = 0;
              end
             obj.radius = radius;
             obj.xCentre = xCentre;
             obj.yCentre = yCentre;
+            disp('Theta dans cercle');
+            theta
             obj.vVector = velocityVector(speed, theta, [obj.xCentre, obj.yCentre]);
         end
         
+        function obj = modifyCircle(obj , xCentre, yCentre, veloVector)
+            disp('UPDATE du cercle');
+           obj.xCentre = xCentre;
+           obj.yCentre = yCentre;
+           newTheta = rad2deg(atan(veloVector(2 , 1) / veloVector(1 , 1)));
+           newSpeed = norm(veloVector);
+           obj.vVector = modifyVelocityVector(obj.vVector, newSpeed, newTheta, veloVector, [xCentre yCentre]);
+        end
         %%SETTER
         function obj = set.radius(obj, radius)
             if radius == 0

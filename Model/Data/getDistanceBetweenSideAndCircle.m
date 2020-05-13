@@ -14,7 +14,7 @@ for i=1:1:colunms
     end
 
     if(isnan(mSideMatrix(1,i)))
-        xI = getX(box.sideMatrix(1,i)); 
+        xI = box.sideMatrix(1,i).xA; 
         yI = mdpMatrix(1,i)*xI + pdpMatrix(1,i);
     else
         if(~isnan(mdpMatrix(1,i)))

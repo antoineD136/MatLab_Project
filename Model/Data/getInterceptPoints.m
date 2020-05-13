@@ -10,7 +10,7 @@ for i = 1:1:colunms
             yI(1, i) = NaN;
         else
             xI(1, i) = getX(box.sideMatrix(1, i));
-            yI(1, i) = mc.*xI(1,i) + pc;
+            yI(1, i) = mc*xI(1,i) + pc;
         end
     else
         if isnan(mc)
@@ -22,7 +22,7 @@ for i = 1:1:colunms
                 yI(1, i) = NaN;
             else
                 xI(1, i) = (pc - pMatrix(1, i))/(mMatrix(1, i) - mc);
-                yI(1, i) = mc.*xI(1,i) + pc; 
+                yI(1, i) = mc*xI(1,i) + pc; 
             end 
         end  
     end
