@@ -3,11 +3,15 @@ totalTime = 7; % Temps de simulation en seconde (ATTENTION le temps est relatif 
 actualTime = 0; 
 boxLenght = 20; % Longueur de la boîte
 boxHeight = 30; % Hauteur de la boîte
-boxOrientation =  10; % Orientation de la boîte en degrés sens anti-horaire
+boxOrientation = 0; % Orientation de la boîte en degrés sens anti-horaire
 x_Side_Initial = 0; % Position initial de la boîte en X
 y_Side_Initial = 10; % Position initial de la boîte en Y
 box = Box(x_Side_Initial, y_Side_Initial,boxHeight, boxLenght, boxOrientation); % Création de la boîte
-cercl = cercle(0,0, 2, -20, 25); % Création du cercle
+cercl = cercle(50,20, 2, -20, 25); % Création du cercle
+if ~verifyIfCircleIsInBox(cercl, box)
+    disp('PROBLEME DE PLACEMENT DU CERCLE');
+    cercl = placeRandomlyCircle(cercl, box);
+end
 % Initialisation des données utilisées pour le calcul et pour la
 % visualisation de la simulation
 [xcInitial , ycInitial] = getCoord(cercl);

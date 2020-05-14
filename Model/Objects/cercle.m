@@ -18,8 +18,6 @@ classdef cercle
             obj.radius = radius;
             obj.xCentre = xCentre;
             obj.yCentre = yCentre;
-            disp('Theta dans cercle');
-            theta
             obj.vVector = velocityVector(speed, theta, [obj.xCentre, obj.yCentre]);
         end
         
@@ -49,7 +47,13 @@ classdef cercle
             obj.vVector = vVector;
         end
         %%GETTER
-        
+        function [circleSquareBoxX , circleSquareBoxY] = getCircleSquareBox(obj)
+            xC = obj.xCentre;
+            yC = obj.yCentre;
+            r = obj.radius;
+          circleSquareBoxX = [xC - r , xC + r , xC + r , xC - r];
+          circleSquareBoxY = [yC - r ,  yC - r , yC + r , yC + r];
+        end
         function [m, p] = getSlopeAndP(obj)
             m = obj.vVector.slope;
             p = obj.vVector.p;

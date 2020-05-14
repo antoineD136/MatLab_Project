@@ -1,8 +1,4 @@
 function [vPrime] = getNewVelocityVector(side, circle) % Fonction pour définir le nouveau vecteur vitesse du cercle effectuant la collision
-% Définition des composantes X des deux points appartenant à la droite sur 
-% laquelle s'effectue la collision
-xTest1 = 2; 
-xTest2 = xTest1 + 1;
 % Récupération de la pente de la droite et de son ordonnée à l'origine
 [m, p] = getSlopeAndP(side);
 % Calcul du nouveau vecteur vitesse V'
@@ -21,6 +17,10 @@ else
     disp('Côté oblique');
     V = [circle.vVector.projectedSpeedVx circle.vVector.projectedSpeedVy];
     % Calcul donnée
+    % Définition des composantes X des deux points appartenant à la droite sur 
+    % laquelle s'effectue la collision
+    xTest1 = 2; 
+    xTest2 = xTest1 + 1;
     yTest1 = m .* xTest1 + p;
     yTest2 = m .* xTest2 + p;
     xNumber = xTest2 - xTest1;
