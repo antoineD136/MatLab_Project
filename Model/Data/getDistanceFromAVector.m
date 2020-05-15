@@ -1,8 +1,8 @@
 function [distanceMatrix] = getDistanceFromAVector(box, circle)
-tolerance = 0.1
+tolerance = 0.1;
 [xIMatrix, yIMatrix] = getInterceptPoints(box, circle);
-xc = circle.xCentre
-yc = circle.yCentre
+xc = circle.xCentre;
+yc = circle.yCentre;
 xVectorMatrix = xIMatrix - xc;
 yVectorMatrix = yIMatrix - yc;
 distanceMatrix = sqrt(xVectorMatrix.^2 + yVectorMatrix.^2);

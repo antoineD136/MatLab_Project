@@ -4,7 +4,7 @@ disp('Début simulation');
 InitSimulator
 i = 1;
 j = 0;
-while j < 30
+while j < 150
 %while actualTime <= totalTime
     % LOG pour connaître le numéro de la collision
     disp('COLLISION N°');
@@ -13,8 +13,6 @@ while j < 30
     % qu'il faut pour aller vers celui-ci
     [time1, side1] = getTargetSide(cercl, box );
     [time2, side2] = getTargetSide(cercl2, box );
-    time2
-    time1
     if time1 > time2
        side = side2;
        time = time2;
@@ -26,7 +24,6 @@ while j < 30
        numCircleThatGoingToCollide = 1;
        numOtherCircle = 2;
     end
-    time
     % Ajout de ce temps, au temps de simulation
     actualTime = actualTime + time;
     % Affichage de la simulation
