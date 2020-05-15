@@ -40,7 +40,7 @@ else
     vPerpen = V * uPerpen;
     vPerpen = -vPerpen;
     % Calcul de V'
-    vPrime = vPara*uPara + vPerpen*uPerpen;
+    vPrime = vPara*uPara + vPerpen*uPerpen
 end
 end
 

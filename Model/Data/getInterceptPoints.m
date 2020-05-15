@@ -1,6 +1,6 @@
 function [xI, yI] = getInterceptPoints(box, circle)
 disp('inter');
-[mc , pc] = getSlopeAndP(circle)
+[mc , pc] = getSlopeAndP(circle);
 [mMatrix , pMatrix] = getSlopeAndPMatrix(box);
 [rows, colunms] = size(box.sideMatrix);
 for i = 1:1:colunms

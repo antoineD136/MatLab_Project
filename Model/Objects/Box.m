@@ -14,7 +14,6 @@ classdef Box
             side2 = side(x_Side_Initial + (boxLenght * cos(boxOrientation)), y_Side_Initial + (boxLenght * sin(boxOrientation)) , x_Side_Initial + (boxDiagonale * cos(boxOrientation + boxOrientationPrime)), y_Side_Initial + (boxDiagonale * sin(boxOrientation + boxOrientationPrime)));
             side3 = side(x_Side_Initial + (boxHeight * sin((2*pi) - boxOrientation)), y_Side_Initial + (boxHeight * cos((2*pi) -boxOrientation)), x_Side_Initial + (boxDiagonale * cos(boxOrientation + boxOrientationPrime)), y_Side_Initial + (boxDiagonale * sin(boxOrientation + boxOrientationPrime))); 
             side4 = side(x_Side_Initial,y_Side_Initial, x_Side_Initial + (boxLenght * cos(boxOrientation)), y_Side_Initial + (boxLenght * sin(boxOrientation)));
-
             obj.sideMatrix = [side1, side2, side3, side4];
         end
         %%FUNCTION

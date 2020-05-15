@@ -12,9 +12,7 @@ classdef velocityVector
     end
     
     methods
-        function obj = velocityVector(speed, theta, coord)
-            %VELOCITYVECTOR Construct an instance of this class
-            %   Detailed explanation goes here
+        function obj = velocityVector(speed, theta, coord)                   
             obj.speed = speed;
             obj.theta = theta;
             [obj.projectedSpeedVx,obj.projectedSpeedVy]  = velocityComponents(speed, theta);

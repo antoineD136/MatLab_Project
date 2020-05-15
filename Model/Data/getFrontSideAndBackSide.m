@@ -1,5 +1,5 @@
 function [distanceMatrixToReturn] = getFrontSideAndBackSide(circle, box, distanceMatrix)
-disp("Distance Matrix AVANT : " + distanceMatrix);
+%disp("Distance Matrix AVANT : " + distanceMatrix);
 [xIMatrix, yIMatrix] = getInterceptPoints(box, circle);
 x1 = circle.xCentre + circle.vVector.projectedSpeedVx * 0.1;
 x2 = circle.xCentre + circle.vVector.projectedSpeedVx * 0.2;
@@ -20,7 +20,7 @@ y2 = circle.yCentre + circle.vVector.projectedSpeedVy * 0.2;
             end
         end
     end
-    disp("Distance Matrix APRES : " + distanceMatrix);
+    %disp("Distance Matrix APRES : " + distanceMatrix);
     distanceMatrixToReturn = distanceMatrix;  
 end
 

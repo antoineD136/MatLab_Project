@@ -5,17 +5,21 @@ classdef cercle
       radius;
       xCentre;
       yCentre;
+      actualX;
+      actualY;
       vVector;
+      masse;
     end
     
     methods
-        function obj = cercle(xCentre, yCentre, radius, speed, theta)
+        function obj = cercle(xCentre, yCentre, radius, speed, theta, masse)
             %CIRCLE Construct an instance of this class
             %   Detailed explanation goes here
             if theta == 360
                 theta = 0;
              end
             obj.radius = radius;
+            obj.masse = masse;
             obj.xCentre = xCentre;
             obj.yCentre = yCentre;
             obj.vVector = velocityVector(speed, theta, [obj.xCentre, obj.yCentre]);
@@ -37,8 +41,17 @@ classdef cercle
             obj.radius = radius;
             end
         end
+        function obj = set.masse(obj, masse)
+            obj.masse = masse;
+        end
         function obj = set.xCentre(obj, xCentre)
             obj.xCentre = xCentre;
+        end
+        function obj = set.actualX(obj, actualX)
+            obj.actualX = actualX;
+        end
+         function obj = set.actualY(obj, actualY)
+            obj.actualY = actualY;
         end
         function obj = set.yCentre(obj, yCentre)
             obj.yCentre = yCentre;
@@ -53,6 +66,9 @@ classdef cercle
             r = obj.radius;
           circleSquareBoxX = [xC - r , xC + r , xC + r , xC - r];
           circleSquareBoxY = [yC - r ,  yC - r , yC + r , yC + r];
+        end
+        function masse = get.masse(obj)
+            masse = obj.masse;
         end
         function [m, p] = getSlopeAndP(obj)
             m = obj.vVector.slope;
@@ -71,8 +87,14 @@ classdef cercle
         function xCentre = get.xCentre(obj)
             xCentre = obj.xCentre;
         end
+        function actualX = get.actualX(obj)
+            actualX = obj.actualX;
+        end
         function yCentre = get.yCentre(obj)
             yCentre = obj.yCentre;
+        end
+        function actualY = get.actualY(obj)
+            actualY = obj.actualY;
         end
     end
 end
