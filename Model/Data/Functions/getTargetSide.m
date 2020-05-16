@@ -7,12 +7,14 @@ angleMatrix = (pi/2) - getAnglefromSinus(distanceToRunMatrix, distanceSideCircle
 speedMatrix = applySpeedToNewAxis(circle.vVector.speed, angleMatrix);
 timeMatrix = getTimeFromDistance(distanceToRunMatrix - circle.radius - 0.00001, speedMatrix);
 distanceSideCircleMatrix = getFrontSideAndBackSide(circle, box, distanceSideCircleMatrix);
+%disp('TimeMatrix AVANT');
 [rows, colunms] = size(box.sideMatrix);
 for i = 1:1:colunms
-     if  distanceSideCircleMatrix(1,i) < 0 ||  distanceSideCircleMatrix(1,i) == Inf
-           timeMatrix(1, i) = -timeMatrix(1, i);
-     end
+    if  distanceSideCircleMatrix(1,i) < 0 ||  distanceSideCircleMatrix(1,i) == Inf
+        timeMatrix(1, i) = -timeMatrix(1, i);
+    end
 end
+%disp('TimeMatrix APRES');
 [time, side] = getTimeAndSideForCollide(timeMatrix, box);
 disp('Fin getTargetSide');
 end

@@ -9,7 +9,7 @@ if A == 0
         X = (-c/b);
     end
 else
-    Delta = B*B-(4*A*C);
+    Delta = B^2-(4*A*C);
     if Delta == 0
         X = -B/(2*A);
     else

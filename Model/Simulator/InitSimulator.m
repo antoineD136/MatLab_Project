@@ -1,18 +1,20 @@
 disp('Début initSimulator');
+timeToWait = 0;
 numCircleThatGoingToCollide = 1;
 numOtherCircle = 2;
 isThereACirclesCollide = false;
 precision = 0.03;
 totalTime = 100; % Temps de simulation en seconde (ATTENTION le temps est relatif au programme et ne correspond pas au temps réel vécu)
 actualTime = 0; 
+startTime = 0;
 boxLenght = 30; % Longueur de la boîte
 boxHeight = 30; % Hauteur de la boîte
 boxOrientation = 0; % Orientation de la boîte en degrés sens anti-horaire
 x_Side_Initial = 0; % Position initial de la boîte en X
 y_Side_Initial = 0; % Position initial de la boîte en Y
 box = Box(x_Side_Initial, y_Side_Initial,boxHeight, boxLenght, boxOrientation); % Création de la boîte
-cercl = cercle(x_Side_Initial + 5, y_Side_Initial + 5, 2, 20, 45, 3); % Création du cercle
-cercl2 = cercle(x_Side_Initial + 10, y_Side_Initial + 10, 2, -20, 20, 3);
+cercl = cercle(x_Side_Initial + 5, y_Side_Initial + 5, 2, 20, 45, Materials.WOOD); % Création du cercle
+cercl2 = cercle(x_Side_Initial + 10, y_Side_Initial + 10, 2, -20, 20, Materials.WOOD);
 if ~verifyIfCircleIsInBox(cercl, box) || ~verifyIfCircleIsNotInOtherCircle(cercl, cercl2)
     disp('PROBLEME DE PLACEMENT DU CERCLE');
     cercl = placeRandomlyCircle(cercl,cercl2, box);
@@ -25,7 +27,7 @@ end
 % visualisation de la simulation
 [xcInitial , ycInitial] = getCoord(cercl);
 [vxc, vyc] = getVelocityComponents(cercl.vVector);
-[xc2,yc2] = getCoord(cercl2);
+[xcInitial2,ycInitial2] = getCoord(cercl2);
 [vxc2,vyc2] = getVelocityComponents(cercl2.vVector);
 [xMatrixs1, yMatrixs1] = getXAndYMatrixOfSide(box, 1);
 [xMatrixs2, yMatrixs2] = getXAndYMatrixOfSide(box, 2);
