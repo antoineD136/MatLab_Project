@@ -32,7 +32,7 @@ classdef cercle
            obj.xCentre = xCentre;
            obj.yCentre = yCentre;
            newTheta = rad2deg(atan(veloVector(2 , 1) / veloVector(1 , 1)));
-           newSpeed = norm(veloVector);
+           newSpeed = norm(veloVector)
            obj.vVector = modifyVelocityVector(obj.vVector, newSpeed, newTheta, veloVector, [xCentre yCentre]);
            disp('FIN UPDATE DU CERCLE');
         end
@@ -108,11 +108,6 @@ classdef cercle
     end
     methods (Access = private)
         function mass = getMass(obj,radius, materials)
-%             switch materials
-%                 case 'WOOD' :
-%                     
-%                 case '                 
-%             end
             rho = materials.rho;
             volume = (4*pi*(radius)^3) / 3;
             mass = rho * volume;

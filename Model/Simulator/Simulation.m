@@ -4,7 +4,7 @@ disp('Début simulation');
 InitSimulator
 i = 1;
 j = 0;
-while j < 150
+while j < 3
     %while actualTime <= totalTime
     % LOG pour connaître le numéro de la collision
     disp('COLLISION N°');
@@ -25,7 +25,7 @@ while j < 150
         numOtherCircle = 2;
     end
     %%%%%%%%%%%%
-    collideTime = 0;
+    circleCollideTime = 0;
     for t=0:0.00001:time
         xcf = xcInitial + vxc*t;
         ycf = ycInitial + vyc*t;
@@ -34,13 +34,13 @@ while j < 150
         %Condition d'arrêt si distance < r1+r2
         distance = getDistanceBetweenCircle(xcf,ycf,xcf2,ycf2);
         if circleIntersect(cercl,cercl2,xcf,ycf,xcf2,ycf2)
-            collideTime = t;
+            circleCollideTime = t;
             break
         end
     end
-    if collideTime < time && collideTime > 0
+    if circleCollideTime < time && circleCollideTime > 0
         isThereACirclesCollide = true;
-        time =collideTime;
+        time =circleCollideTime;
     end
     cercl.finalX = xcInitial + vxc*time;
     cercl.finalY = ycInitial + vyc*time;
@@ -55,10 +55,6 @@ while j < 150
     % temps total
     if actualTime >= totalTime %|| collideTime > 0
         break;
-    end
-    if timeToWait > 0
-        timeToDel = (actualTime - startTime)
-        timeToWait = timeToWait - timeToDel;
     end
     % Iteration pour les logs pour connaitre à combien de collision on est
     j = j + 1;

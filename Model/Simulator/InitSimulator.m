@@ -13,8 +13,10 @@ boxOrientation = 0; % Orientation de la boîte en degrés sens anti-horaire
 x_Side_Initial = 0; % Position initial de la boîte en X
 y_Side_Initial = 0; % Position initial de la boîte en Y
 box = Box(x_Side_Initial, y_Side_Initial,boxHeight, boxLenght, boxOrientation); % Création de la boîte
+xlim([-5,35]);
+ylim([-5,35]);
 cercl = cercle(x_Side_Initial + 5, y_Side_Initial + 5, 2, 20, 45, Materials.WOOD); % Création du cercle
-cercl2 = cercle(x_Side_Initial + 10, y_Side_Initial + 10, 2, -20, 20, Materials.WOOD);
+cercl2 = cercle(x_Side_Initial + 15, y_Side_Initial + 15, 2, -20, 20, Materials.WOOD);
 if ~verifyIfCircleIsInBox(cercl, box) || ~verifyIfCircleIsNotInOtherCircle(cercl, cercl2)
     disp('PROBLEME DE PLACEMENT DU CERCLE');
     cercl = placeRandomlyCircle(cercl,cercl2, box);

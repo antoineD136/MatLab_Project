@@ -12,8 +12,6 @@ for t=0:0.01:time
     y2 = cercl2.radius*sin(theta) + ycf2;
     plot(x,y,'g', x2, y2, 'm', xMatrixs1, yMatrixs1,'r', xMatrixs2, yMatrixs2,'r', xMatrixs3, yMatrixs3,'r', xMatrixs4, yMatrixs4, 'r' );
     axis equal;
-    xlim([-30,30]);
-    ylim([-50,50]);
     anim(i)=getframe;
     i=i+1;
 end
