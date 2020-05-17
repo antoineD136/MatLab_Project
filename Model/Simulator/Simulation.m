@@ -4,7 +4,7 @@ disp('Début simulation');
 InitSimulator
 i = 1;
 j = 0;
-while j < 3
+while j < 150
     %while actualTime <= totalTime
     % LOG pour connaître le numéro de la collision
     disp('COLLISION N°');

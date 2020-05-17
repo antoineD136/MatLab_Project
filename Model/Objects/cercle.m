@@ -2,14 +2,14 @@ classdef cercle
     %CIRCLE Summary of this class goes here
     %   Detailed explanation goes here
     properties
-      radius;
-      xCentre;
-      yCentre;
-      finalX;
-      finalY;
-      vVector;
-      mass;
-      materials;
+        radius;
+        xCentre;
+        yCentre;
+        finalX;
+        finalY;
+        vVector;
+        mass;
+        materials;
     end
     
     methods
@@ -28,24 +28,24 @@ classdef cercle
         end
         
         function obj = modifyCircle(obj , xCentre, yCentre, veloVector)
-           disp('UPDATE du cercle');
-           obj.xCentre = xCentre;
-           obj.yCentre = yCentre;
-           newTheta = rad2deg(atan(veloVector(2 , 1) / veloVector(1 , 1)));
-           newSpeed = norm(veloVector)
-           obj.vVector = modifyVelocityVector(obj.vVector, newSpeed, newTheta, veloVector, [xCentre yCentre]);
-           disp('FIN UPDATE DU CERCLE');
+            disp('UPDATE du cercle');
+            obj.xCentre = xCentre;
+            obj.yCentre = yCentre;
+            newTheta = rad2deg(atan(veloVector(2 , 1) / veloVector(1 , 1)));
+            newSpeed = norm(veloVector);
+            obj.vVector = modifyVelocityVector(obj.vVector, newSpeed, newTheta, veloVector, [xCentre yCentre]);
+            disp('FIN UPDATE DU CERCLE');
         end
         %%SETTER
         function obj = set.radius(obj, radius)
             if radius == 0
                 disp('Le rayon ne peut pas valoir zero!');
             else
-            obj.radius = radius;
+                obj.radius = radius;
             end
         end
         function obj = set.materials(obj, materials)
-           obj.materials = materials; 
+            obj.materials = materials;
         end
         function obj = set.mass(obj, masse)
             obj.mass = masse;
@@ -56,7 +56,7 @@ classdef cercle
         function obj = set.finalX(obj, finalX)
             obj.finalX = finalX;
         end
-         function obj = set.finalY(obj, finalY)
+        function obj = set.finalY(obj, finalY)
             obj.finalY = finalY;
         end
         function obj = set.yCentre(obj, yCentre)
@@ -70,8 +70,8 @@ classdef cercle
             xC = obj.xCentre;
             yC = obj.yCentre;
             r = obj.radius;
-          circleSquareBoxX = [xC - r , xC + r , xC + r , xC - r];
-          circleSquareBoxY = [yC - r ,  yC - r , yC + r , yC + r];
+            circleSquareBoxX = [xC - r , xC + r , xC + r , xC - r];
+            circleSquareBoxY = [yC - r ,  yC - r , yC + r , yC + r];
         end
         function materials = get.materials(obj)
             materials = obj.materials;

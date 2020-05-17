@@ -1,11 +1,8 @@
 disp('Calcul du nouveau vecteur Vitesse (Script)');
 if isThereACirclesCollide
     disp('Collisions des deux cercles');
-    % Determiner les points d'intersection des cercles
-    [ xIntercept1, xIntercept2, yIntercept1, yIntercept2 ] = getTangeanteLineOfCollide(circleMatrix(1, 1),circleMatrix(1, 2),circleMatrix(1, 1).finalX,circleMatrix(1, 1).finalY,circleMatrix(1, 2).finalX,circleMatrix(1, 2).finalY);
     % Nouveaux vecteurs vitesses
-    [v1Prim,v2Prim] = getNewVelocityVectorFromCircleCollide(circleMatrix(1, 1),circleMatrix(1, 2),xIntercept1, xIntercept2, yIntercept1, yIntercept2 );
-    %[v1Prim,v2Prim] = getNewVelocityVectorFromCircleCollide(circleMatrix(1, 1),circleMatrix(1, 2),circleMatrix(1, 1).finalX,circleMatrix(1, 1).finalY,circleMatrix(1, 2).finalX,circleMatrix(1, 2).finalY);
+    [v1Prim,v2Prim] = getNewVelocityVectorFromCircleCollide(circleMatrix(1, 1),circleMatrix(1, 2));
     circleMatrix(1, 1) = modifyCircle(circleMatrix(1, 1), circleMatrix(1, 1).finalX, circleMatrix(1, 1).finalY, v1Prim);
     circleMatrix(1, 2) = modifyCircle(circleMatrix(1, 2), circleMatrix(1, 2).finalX, circleMatrix(1, 2).finalY, v2Prim);
 else

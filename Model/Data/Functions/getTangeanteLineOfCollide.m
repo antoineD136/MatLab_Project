@@ -18,23 +18,6 @@ if ycf2-ycf == 0
     % détermination de yIntercept1 et yIntercept2
     yIntercept1 = sqrt((cercl.radius^2) - (xIntercept1-xcf)^2 ) + ycf;
     yIntercept2 = sqrt((cercl2.radius^2) - (xIntercept2-xcf2)^2 ) + ycf2;
-%     if xcf > xcf2
-%         xIntercept1 = xcf - r0;
-%     else
-%         xIntercept1 = xcf + r0;
-%     end
-%     xIntercept2 = xIntercept1
-%     yIntercept1 = 1
-%     yIntercept2 = 2
-% elseif xcf - xcf2 == 0
-%     if ycf > ycf2
-%         yIntercept1 = ycf - r0;
-%     else
-%         yIntercept1 = ycf + r0;
-%     end
-%     yIntercept2 = yIntercept1
-%     xIntercept1 = 1
-%     xIntercept2 = 2
 else
     disp('EQUATION SECOND DEGRE');
     N = (r2^2 - r1^2 - xcf2^2 + xcf^2 - ycf2^2 + ycf^2)/(2*(ycf-ycf2));

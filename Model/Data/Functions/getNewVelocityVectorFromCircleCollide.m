@@ -1,4 +1,4 @@
-function [v1Prim,v2Prim] = getNewVelocityVectorFromCircleCollide( circle1, circle2, xIntercept1, xIntercept2, yIntercept1, yIntercept2) % Fonction pour définir le nouveau vecteur vitesse du cercle effectuant la collision
+function [v1Prim,v2Prim] = getNewVelocityVectorFromCircleCollide( circle1, circle2) % Fonction pour définir le nouveau vecteur vitesse du cercle effectuant la collision
 %Vecteurs vitesses cercle1 et cercle2 
     V1 = [circle1.vVector.projectedSpeedVx circle1.vVector.projectedSpeedVy];
     V2 = [circle2.vVector.projectedSpeedVx circle2.vVector.projectedSpeedVy];

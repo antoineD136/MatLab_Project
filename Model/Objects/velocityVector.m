@@ -12,7 +12,7 @@ classdef velocityVector
     end
     
     methods
-        function obj = velocityVector(speed, theta, coord)                   
+        function obj = velocityVector(speed, theta, coord)
             obj.speed = speed;
             obj.theta = theta;
             [obj.projectedSpeedVx,obj.projectedSpeedVy]  = velocityComponents(speed, theta);
@@ -43,7 +43,7 @@ classdef velocityVector
             obj.projectedSpeedVy = projectedSpeedVy;
         end
         function obj = set.theta(obj, theta)
-                obj.theta = theta;
+            obj.theta = theta;
         end
         function obj = set.speed(obj, speed)
             obj.speed = speed;
@@ -74,8 +74,8 @@ classdef velocityVector
             thetaAboutSideFromCollide = obj.thetaAboutSideFromCollide;
         end
         function [theta, thetaAboutSideFromCollide] = getThetaAndRelativeTheta(obj)
-           theta = obj.theta;
-           thetaAboutSideFromCollide = obj.thetaAboutSideFromCollide;
+            theta = obj.theta;
+            thetaAboutSideFromCollide = obj.thetaAboutSideFromCollide;
         end
         function [vx, vy] = getVelocityComponents(obj)
             vx = obj.projectedSpeedVx;

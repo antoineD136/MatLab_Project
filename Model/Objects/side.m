@@ -3,10 +3,10 @@ classdef side
     %   Detailed explanation goes here
     
     properties
-       xA
-       yA
-       xB
-       yB
+        xA
+        yA
+        xB
+        yB
         m
         p
         xMatrix
@@ -23,10 +23,10 @@ classdef side
             obj.yB = yB;
             obj.xMatrix = linspace(obj.xA, obj.xB, 1000);
             if((xB - xA) > 0 + 0.0001 || (xB - xA) < 0 - 0.0001)
-                obj.m = (yB - yA)/(xB - xA);               
+                obj.m = (yB - yA)/(xB - xA);
                 obj.p = yA - obj.m*xA;
                 obj.yMatrix = obj.m*obj.xMatrix + obj.p;
-            else 
+            else
                 obj.m = NaN;
                 obj.p = 0;
                 obj.yMatrix = linspace(obj.yA, obj.yB, 1000);
@@ -39,7 +39,7 @@ classdef side
         function obj = set.yA(obj, yA)
             obj.yA = yA;
         end
-         function obj = set.xB(obj, xB)
+        function obj = set.xB(obj, xB)
             obj.xB = xB;
         end
         function obj = set.yB(obj, yB)
@@ -60,23 +60,29 @@ classdef side
         %%GETTER
         function [matrix] = getCoord(obj)
             matrix = [obj.xA obj.yA ; obj.xB obj.yB]
-        end        
+        end
         function [m, p] = getSlopeAndP(obj)
             m = obj.m;
             p = obj.p;
-        end        
+        end
         function m = getSlope(obj)
             m = obj.m;
         end
         function x = getX(obj)
             x = obj.xA;
-        end  
+        end
         function y = getY(obj)
             y = obj.yA;
-        end  
+        end
         function [xMatrix, yMatrix] = getPointsMatrix(obj)
-           xMatrix = obj.xMatrix;
-           yMatrix = obj.yMatrix;
+            xMatrix = obj.xMatrix;
+            yMatrix = obj.yMatrix;
+        end
+        function xA = get.xA(obj)
+            xA = obj.xA;
+        end
+        function xB = get.xB(obj)
+            xB = obj.xB;
         end
     end
 end

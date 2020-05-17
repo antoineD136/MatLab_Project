@@ -5,12 +5,13 @@ isInCorrectPosition = false;
 rToReplace = circleToReplace.radius;
 xInterval = [extremumBoxX(1,1) + rToReplace , extremumBoxX(1,2) - rToReplace];
 yInterval = [extremumBoxY(1,1) + rToReplace , extremumBoxY(1,2) - rToReplace];
-[squareCoordCircle2X , squareCoordCircle2Y] = getCircleSquareBox(otherCircle)
+[squareCoordCircle2X , squareCoordCircle2Y] = getCircleSquareBox(otherCircle);
 newX = xInterval(1,1) + (-xInterval(1,1) + xInterval(1,2))*rand(1);
 newY = yInterval(1,1) + (-yInterval(1,1) + yInterval(1,2))*rand(1);
 circleToReplace = cercle(newX, newY, rToReplace, circleToReplace.vVector.speed, circleToReplace.vVector.theta, circleToReplace.materials);
 while ~isInCorrectPosition
-    if ~verifyIfCircleIsNotInOtherCircle(circleToReplace, otherCircle)
+    if ~verifyIfCircleIsNotInOtherCircle(circleToReplace, otherCircle) || ~verifyIfCircleIsInBox(circleToReplace, box)
+        disp('LE CERCLE N''EST PAS BIEN PLACE');
         isInCorrectPosition = false;
         if (squareCoordCircle2X(1,1) - extremumBoxX(1,1) > (2*rToReplace)) || (squareCoordCircle2Y(1,1) - extremumBoxY(1,1) > (2*rToReplace))
             xInterval = [extremumBoxX(1,1) + rToReplace , squareCoordCircle2X(1,1) - rToReplace];
