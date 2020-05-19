@@ -1,0 +1,89 @@
+<deployment-project plugin="plugin.apptool" plugin-version="1.0">
+  <configuration build-checksum="1831245516" file="/Users/antoinedelbruyere/MATLAB/projects/MatLab_Project/UI Collide Sim.prj" location="/Users/antoinedelbruyere/MATLAB/projects/MatLab_Project" name="UI Collide Sim" target="target.mlapps" target-name="Package App">
+    <param.appname>UI Collide Sim</param.appname>
+    <param.authnamewatermark>Delbruyère Antoine &amp; De Groodt Matthew</param.authnamewatermark>
+    <param.email>la179760@student.helha.be</param.email>
+    <param.company>HELHa</param.company>
+    <param.icon />
+    <param.icons />
+    <param.summary>Simulateur de collision élastiques entre deux cercles</param.summary>
+    <param.description />
+    <param.screenshot>/private/var/folders/qj/ntl1mq9j3d5czbp1_x66r3hh0000gn/T/tp7f0f5ee3_f9b9_470a_9bee_a027d26f188c.png</param.screenshot>
+    <param.version>1.0</param.version>
+    <param.products.name>
+      <item>MATLAB</item>
+    </param.products.name>
+    <param.products.id>
+      <item>1</item>
+    </param.products.id>
+    <param.products.version>
+      <item>9.7</item>
+    </param.products.version>
+    <param.platforms />
+    <param.output>${PROJECT_ROOT}</param.output>
+    <param.guid>4fd02665-feb1-4d60-ad8a-0bca2476f756</param.guid>
+    <unset>
+      <param.icon />
+      <param.icons />
+      <param.description />
+      <param.version />
+      <param.platforms />
+      <param.output />
+    </unset>
+    <fileset.main>
+      <file>${PROJECT_ROOT}/Simulator.mlapp</file>
+    </fileset.main>
+    <fileset.depfun>
+      <file>${PROJECT_ROOT}/Model/Data/Enum/Materials.m</file>
+      <file>${PROJECT_ROOT}/Model/Data/Functions/applySpeedToNewAxis.m</file>
+      <file>${PROJECT_ROOT}/Model/Data/Functions/circleIntersect.m</file>
+      <file>${PROJECT_ROOT}/Model/Data/Functions/getAngleInFirstQuadran.m</file>
+      <file>${PROJECT_ROOT}/Model/Data/Functions/getAnglefromSinus.m</file>
+      <file>${PROJECT_ROOT}/Model/Data/Functions/getDistanceBetweenCircle.m</file>
+      <file>${PROJECT_ROOT}/Model/Data/Functions/getDistanceBetweenSideAndCircle.m</file>
+      <file>${PROJECT_ROOT}/Model/Data/Functions/getDistanceFromAVector.m</file>
+      <file>${PROJECT_ROOT}/Model/Data/Functions/getFrontSideAndBackSide.m</file>
+      <file>${PROJECT_ROOT}/Model/Data/Functions/getInterceptPoints.m</file>
+      <file>${PROJECT_ROOT}/Model/Data/Functions/getMandPFromVelocity.m</file>
+      <file>${PROJECT_ROOT}/Model/Data/Functions/getMinAndMaxOfInclinedBox.m</file>
+      <file>${PROJECT_ROOT}/Model/Data/Functions/getNewVelocityVector.m</file>
+      <file>${PROJECT_ROOT}/Model/Data/Functions/getNewVelocityVectorFromCircleCollide.m</file>
+      <file>${PROJECT_ROOT}/Model/Data/Functions/getTargetSide.m</file>
+      <file>${PROJECT_ROOT}/Model/Data/Functions/getTimeAndSideForCollide.m</file>
+      <file>${PROJECT_ROOT}/Model/Data/Functions/getTimeFromDistance.m</file>
+      <file>${PROJECT_ROOT}/Model/Data/Functions/placeRandomlyCircle.m</file>
+      <file>${PROJECT_ROOT}/Model/Data/Functions/velocityComponents.m</file>
+      <file>${PROJECT_ROOT}/Model/Data/Functions/verifyIfCircleIsInBox.m</file>
+      <file>${PROJECT_ROOT}/Model/Data/Functions/verifyIfCircleIsNotInOtherCircle.m</file>
+      <file>${PROJECT_ROOT}/Model/Objects/Box.m</file>
+      <file>${PROJECT_ROOT}/Model/Objects/cercle.m</file>
+      <file>${PROJECT_ROOT}/Model/Objects/side.m</file>
+      <file>${PROJECT_ROOT}/Model/Objects/velocityVector.m</file>
+    </fileset.depfun>
+    <fileset.resources />
+    <fileset.package />
+    <build-deliverables>
+      <file location="/Users/antoinedelbruyere/MATLAB/projects" name="MatLab_Project" optional="false">/Users/antoinedelbruyere/MATLAB/projects/MatLab_Project</file>
+    </build-deliverables>
+    <workflow />
+    <matlab>
+      <root>/Applications/MATLAB_R2019b.app</root>
+      <toolboxes />
+    </matlab>
+    <platform>
+      <unix>true</unix>
+      <mac>true</mac>
+      <windows>false</windows>
+      <win2k>false</win2k>
+      <winxp>false</winxp>
+      <vista>false</vista>
+      <linux>false</linux>
+      <solaris>false</solaris>
+      <osver>10.13.6</osver>
+      <os32>false</os32>
+      <os64>true</os64>
+      <arch>maci64</arch>
+      <matlab>true</matlab>
+    </platform>
+  </configuration>
+</deployment-project>

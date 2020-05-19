@@ -9,14 +9,14 @@ actualTime = 0;
 startTime = 0;
 boxLenght = 30; % Longueur de la boîte
 boxHeight = 30; % Hauteur de la boîte
-boxOrientation = -120; % Orientation de la boîte en degrés sens anti-horaire
+boxOrientation = 0; % Orientation de la boîte en degrés sens anti-horaire
 x_Side_Initial = 0; % Position initial de la boîte en X
 y_Side_Initial = 0; % Position initial de la boîte en Y
 box = Box(x_Side_Initial, y_Side_Initial,boxHeight, boxLenght, boxOrientation); % Création de la boîte
 xlim([-5,35]);
 ylim([-5,35]);
-cercl = cercle(x_Side_Initial + 5000, y_Side_Initial + 5, 2, 50, 89, Materials.MARBLE); % Création du cercle
-cercl2 = cercle(x_Side_Initial + 10, y_Side_Initial + 10, 2, -12, 1, Materials.TIN);
+cercl = cercle(x_Side_Initial + 12, y_Side_Initial + 5, 1, 30, 90, Materials.IRON); % Création du cercle
+cercl2 = cercle(x_Side_Initial + 5, y_Side_Initial + 17, 1, -30, 135, Materials.IRON);
 if ~verifyIfCircleIsInBox(cercl, box) || ~verifyIfCircleIsNotInOtherCircle(cercl, cercl2)
     disp('PROBLEME DE PLACEMENT DU CERCLE');
     cercl = placeRandomlyCircle(cercl,cercl2, box);

@@ -4,7 +4,7 @@ disp('Début simulation');
 InitSimulator
 i = 1;
 j = 0;
-while j < 150
+while j < 2
     %while actualTime <= totalTime
     % LOG pour connaître le numéro de la collision
     disp('COLLISION N°');
@@ -32,7 +32,6 @@ while j < 150
         xcf2 = xcInitial2 + vxc2*t;
         ycf2 = ycInitial2 + vyc2*t;
         %Condition d'arrêt si distance < r1+r2
-        distance = getDistanceBetweenCircle(xcf,ycf,xcf2,ycf2);
         if circleIntersect(cercl,cercl2,xcf,ycf,xcf2,ycf2)
             circleCollideTime = t;
             break
@@ -42,10 +41,10 @@ while j < 150
         isThereACirclesCollide = true;
         time =circleCollideTime;
     end
-    cercl.finalX = xcInitial + vxc*time;
-    cercl.finalY = ycInitial + vyc*time;
-    cercl2.finalX = xcInitial2 + vxc2*time;
-    cercl2.finalY = ycInitial2 + vyc2*time;
+    cercl.finalX = xcInitial + vxc*time
+    cercl.finalY = ycInitial + vyc*time
+    cercl2.finalX = xcInitial2 + vxc2*time
+    cercl2.finalY = ycInitial2 + vyc2*time
     % Ajout de ce temps, au temps de simulation
     % Affichage de la simulation
     ShowSimulation
