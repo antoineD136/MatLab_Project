@@ -4,11 +4,17 @@ disp('Début simulation');
 InitSimulator
 i = 1;
 j = 0;
-while j < 2
+while j < 1
     %while actualTime <= totalTime
     % LOG pour connaître le numéro de la collision
     disp('COLLISION N°');
     disp(j + 1);
+    % Indication de la vitesse initiale de chaque cercle
+    cercl.vVector.initialSpeed = cercl.vVector.speed;
+    cercl2.vVector.initialSpeed = cercl2.vVector.speed;
+    % Indication de la direction initiale du vecteur vitesse
+    cercl.vVector.initialTheta = cercl.vVector.theta;
+    cercl2.vVector.initialTheta = cercl2.vVector.theta;
     % Repérage du côté vers lequel se dirige le cercle et calcul du temps
     % qu'il faut pour aller vers celui-ci
     [time1, side1] = getTargetSide(cercl, box );
