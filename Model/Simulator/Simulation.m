@@ -51,6 +51,7 @@ while j < 1
     cercl.finalY = ycInitial + vyc*time
     cercl2.finalX = xcInitial2 + vxc2*time
     cercl2.finalY = ycInitial2 + vyc2*time
+    [speed1 , speed2] = compareResults2(cercl, cercl2);
     % Ajout de ce temps, au temps de simulation
     % Affichage de la simulation
     ShowSimulation
@@ -64,4 +65,9 @@ while j < 1
     % Iteration pour les logs pour connaitre à combien de collision on est
     j = j + 1;
 end
+speed1
+speed2
+cercl.vVector.speed
+cercl2.vVector.speed
+
 disp('Fin simulation');
