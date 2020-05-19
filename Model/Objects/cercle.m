@@ -33,7 +33,7 @@ classdef cercle
             obj.yCentre = yCentre;
             newTheta = rad2deg(atan(veloVector(2 , 1) / veloVector(1 , 1)))
             %newTheta = rad2deg(atan(veloVector(1 , 1) / veloVector(2 , 1)))
-            newSpeed = norm(veloVector);
+            newSpeed = norm(veloVector)
             obj.vVector = modifyVelocityVector(obj.vVector, newSpeed, newTheta, veloVector, [xCentre yCentre]);
             disp('FIN UPDATE DU CERCLE');
         end

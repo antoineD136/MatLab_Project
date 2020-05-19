@@ -1,5 +1,6 @@
 
 disp('Script simulation');
+hold off
 for t=0:0.01:time
     theta = linspace(0, 2*pi);
     xcf = xcInitial + vxc*t;
@@ -14,6 +15,11 @@ for t=0:0.01:time
     axis equal;
     anim(i)=getframe;
     i=i+1;
+end
+if isThereACirclesCollide
+    hold on
+    [nX,nY,tX,tY] = getCollideAxis(cercl, cercl2, [cercl2.finalX - cercl.finalX ; cercl2.finalY - cercl.finalY]);
+    plot(nX, nY, 'm', tX, tY, 'm');
 end
 circleMatrix = [cercl , cercl2];
 disp('Fin script simulation');
